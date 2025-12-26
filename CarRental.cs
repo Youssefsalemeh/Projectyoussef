@@ -24,7 +24,7 @@ namespace FinalProject
             try
             {
                 cons.Open();
-                string query = "SELECT RegNum FROM CarTable"; // ✅ ALL cars (Yes + No)
+                string query = "SELECT RegNum FROM CarTable"; 
                 using (SqlCommand cmd = new SqlCommand(query, cons))
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
@@ -306,17 +306,6 @@ namespace FinalProject
         }
 
 
-        //private void RentalDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    txt_rentid.Text = RentalDGV.SelectedRows[0].Cells[0].Value.ToString();
-        //    carregtxt.Text = RentalDGV.SelectedRows[0].Cells[1].Value.ToString();
-        //    custumers.Text = RentalDGV.SelectedRows[0].Cells[2].Value.ToString();
-        //    daterent.Text = RentalDGV.SelectedRows[0].Cells[3].Value.ToString();
-        //    datereturn.Text = RentalDGV.SelectedRows[0].Cells[4].Value.ToString();
-        //    Fees.Text = RentalDGV.SelectedRows[0].Cells[5].Value.ToString();
-        //}
-
-
 
         private void btn_deleterent_Click(object sender, EventArgs e)
         {
@@ -359,21 +348,22 @@ namespace FinalProject
             string carReg = row.Cells[1].Value?.ToString() ?? "";
             string cusId = row.Cells[2].Value?.ToString() ?? "";
 
-            // ✅ Ensure combo lists are ready
+          
             FillCombo();
             FillCustomers();
 
-            // ✅ Set selected values
+         
             carregtxt.SelectedValue = carReg;
             custumers.SelectedValue = cusId;
 
-            // ✅ Fill name (SelectionChangeCommitted won’t fire when you change SelectedValue by code)
+           
             fetchcusname();
 
-            // ✅ Dates + Fees
+         
             daterent.Value = Convert.ToDateTime(row.Cells[3].Value);
             datereturn.Value = Convert.ToDateTime(row.Cells[4].Value);
             Fees.Text = row.Cells[5].Value?.ToString() ?? "";
         }
     }
 }
+
