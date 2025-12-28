@@ -161,7 +161,7 @@
             label5.Click += label5_Click;
             // 
             // Login
-            // 
+            // size
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
@@ -206,3 +206,4 @@
         private PictureBox pictureBox2;
     }
 }
+
