@@ -272,7 +272,7 @@
             button6.Click += button6_Click;
             // 
             // cars
-            // 
+            // size
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.GhostWhite;
@@ -326,3 +326,4 @@
         private Button button6;
     }
 }
+
