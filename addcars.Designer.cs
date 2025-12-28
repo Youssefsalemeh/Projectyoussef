@@ -411,7 +411,7 @@
             search_btn.Click += search_btn_Click;
             // 
             // addcars
-            // 
+            // size
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
@@ -487,4 +487,5 @@
         private TextBox text_search;
         private Button search_btn;
     }
+
 }
