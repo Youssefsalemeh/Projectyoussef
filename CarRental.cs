@@ -73,34 +73,6 @@ namespace FinalProject
                 }
             }//close
         }
-        private void FillCustomers()
-        {
-            _bindingCustomers = true;
-            try
-            {
-                cons.Open();
-                string query = "SELECT CusId FROM CustomerTable";
-                SqlCommand cmd = new SqlCommand(query, cons);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(rdr);
-                custumers.ValueMember = "CusId";
-                custumers.DisplayMember = "CusId";
-                custumers.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while filling the customers combo box: " + ex.Message);
-            }
-            finally
-            {
-                if (cons.State == ConnectionState.Open)
-                {
-                    _bindingCustomers = false;
-                    cons.Close();
-                }
-            }
-        }
         private void fetchcusname()
         {
             if (_bindingCustomers) return;
@@ -130,6 +102,34 @@ namespace FinalProject
             {
                 if (cons.State == ConnectionState.Open)
                 {
+                    cons.Close();
+                }
+            }
+        }
+        private void FillCustomers()
+        {
+            _bindingCustomers = true;
+            try
+            {
+                cons.Open();
+                string query = "SELECT CusId FROM CustomerTable";
+                SqlCommand cmd = new SqlCommand(query, cons);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(rdr);
+                custumers.ValueMember = "CusId";
+                custumers.DisplayMember = "CusId";
+                custumers.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while filling the customers combo box: " + ex.Message);
+            }
+            finally
+            {
+                if (cons.State == ConnectionState.Open)
+                {
+                    _bindingCustomers = false;
                     cons.Close();
                 }
             }
@@ -366,5 +366,6 @@ namespace FinalProject
         }
     }
 }
+
 
 
