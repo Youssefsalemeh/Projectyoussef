@@ -22,7 +22,7 @@ namespace FinalProject
 
         SqlConnection cons = new SqlConnection("Data Source=DESKTOP-R6EN807\\SQLEXPRESS;Initial Catalog=carRental;Integrated Security=True;TrustServerCertificate=True");
 
-
+        //load page
         private void Populate()
         {
 
@@ -188,3 +188,4 @@ namespace FinalProject
         }
     }
 }
+
