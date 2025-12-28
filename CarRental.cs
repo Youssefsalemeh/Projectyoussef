@@ -71,7 +71,7 @@ namespace FinalProject
                 {
                     cons.Close();
                 }
-            }
+            }//close
         }
         private void FillCustomers()
         {
@@ -366,4 +366,5 @@ namespace FinalProject
         }
     }
 }
+
 
